@@ -40,10 +40,13 @@ class Class_room :
                             break
                         except:
                             print("please Enter number for marks :/")
-
-                # set average 
-                av = sum(user['courses'].values()) / len(user['courses'])
-                user.update({"average": av})
+                else:
+                    # set average 
+                    try :
+                        av = sum(user['courses'].values()) / len(user['courses'])
+                        user.update({"average": av})
+                    except:
+                        print("Error : we don't any lessons please add a lessons with \"courses_list\" method")
 
         # when we don't find user in students run this code 
         if flag:
@@ -56,3 +59,8 @@ class Class_room :
     def show_students_ino (cls):
         return cls.students
     
+
+    @classmethod
+    def rejected (cls):
+        result =  list ( filter(lambda item : item["average"] < 10, cls.students) )
+        return result
