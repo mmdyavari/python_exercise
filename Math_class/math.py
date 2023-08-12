@@ -67,6 +67,12 @@ class Math:
 
 
 
+class String :
+    pass
+
+
+
+
 if __name__ == "__main__":
     pass
     # print(Math.abs(-2.3947))
