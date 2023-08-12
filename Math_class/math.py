@@ -1,3 +1,5 @@
+import string
+
 class Math:
     # attributs
     PI = 3.14159265359
@@ -68,7 +70,60 @@ class Math:
 
 
 class String :
-    pass
+    @staticmethod
+    def length (itrable):
+        le = 0
+        for i in itrable:
+            le += 1
+        else:
+            return le
+        
+    @staticmethod
+    def split (txt , char = " "):
+        txt += char
+        result_list = []
+        index = ''
+        for i in txt:
+            if i == char:
+                result_list.append(index)
+                index = ''
+            else:
+                index += i
+        return list(filter(None ,result_list))
+    
+    @staticmethod
+    def uppercase (txt):
+        letters = zip(string.ascii_lowercase, string.ascii_uppercase)
+        letters = {k:v for k,v in letters}
+        result = ''
+        for i in txt:
+            try:
+                result += letters[i]
+            except KeyError:
+                result += i
+        return result
+
+    @staticmethod
+    def lowercase (txt):
+        letters = zip(string.ascii_uppercase, string.ascii_lowercase)
+        letters = {k:v for k,v in letters}
+        result = ''
+        for i in txt:
+            try:
+                result += letters[i]
+            except KeyError:
+                result += i
+        return result
+
+    @staticmethod
+    def replace (txt, old, new):
+        result = ''
+        for i in txt:
+            if i == old:
+                result += new
+            else:
+                result += i
+        return result
 
 
 
@@ -83,3 +138,8 @@ if __name__ == "__main__":
     # print(Math.round(12.84638468))
     # print(Math.floor(1.9))
     # print(Math.random())
+    # print(String.length("modskfh"))
+    # print(String.split("hello my name is mohammad"))
+    # print(String.uppercase("HelLo my name is MohAmmaD"))
+    # print(String.lowercase("HelLo my name is MohAmmaD"))
+    # print(String.replace("hello my name is mohammad", " ", "_"))
