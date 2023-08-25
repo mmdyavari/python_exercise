@@ -1,0 +1,15 @@
+# write your code here (with indent same this)
+# then run python file (app.py)
+# ------------------------
+
+    class Class_A:
+        pass
+
+    class Class_B(Class_A):
+        pass
+
+    class Class_C(Class_A):
+        pass
+
+    class Class_D(Class_A):
+        pass
